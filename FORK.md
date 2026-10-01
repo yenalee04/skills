@@ -34,6 +34,18 @@ git push origin main
 
 받은 뒤 확인할 것: `grilling/SKILL.md` 맨 끝의 `## Fork customization (yenalee04)` 단락이 그대로 있는지.
 
+## 내 Claude에 반영하기
+
+2026-10-01부터 내 Claude는 공식 마켓 버전 대신 이 포크를 플러그인으로 쓴다(마켓 이름 `mattpocock`, 출처 `yenalee04/skills`). 깃허브 포크가 바뀌면 아래 두 줄로 Claude에 반영하고, Claude를 다시 연다.
+
+```
+claude plugin marketplace update mattpocock
+claude plugin update mattpocock-skills@mattpocock
+```
+
+- 미확인: 버전 번호(1.2.3)가 그대로일 때도 `plugin update`가 새 내용을 받아오는지. 처음 실제 업데이트 때 설치본의 `grilling/SKILL.md`를 열어 확인한다.
+- 공식 버전으로 되돌리기: `claude plugin uninstall mattpocock-skills@mattpocock` 후 `claude plugin install mattpocock-skills@claude-plugins-official`.
+
 ## 지킬 것
 
 - **공개 저장소다.** 회사 이름, 브랜드, SKU, 숫자 등 회사 정보는 넣지 않는다.
